@@ -48,22 +48,20 @@ function App() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      className="bg-amber-400 h-screen flex"
     >
-      {/* <AppDropDown
+      <div className="m-auto">
+      <AppDropDown
         id="person"
         title="Select Person"
+        position="top-left"
         items={items}
         hasImage
-        style="bg-purple-800"
-        selectedId="3"
+        style="bg-slate-100"
         onSelect={handleSelect}
-      /> */}
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      />
+      </div>
+      
     </div>
   );
 }

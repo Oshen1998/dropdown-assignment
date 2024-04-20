@@ -78,7 +78,7 @@ const AppDropDown = (props: AppDropDownProps) => {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className={classNames(
-          "flex justify-between items-center gap-5 rounded w-full py-2 px-4 bg-blue-500 text-white",
+          "flex justify-between items-center gap-5 rounded w-full py-2 px-4 text-black outline-none hover:ring hover:outline-blue-500",
           style
         )}
       >
