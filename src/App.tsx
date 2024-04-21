@@ -6,6 +6,7 @@ import { DropDownItems } from "./constants";
 
 
 function App() {
+  
   const handleSelect = (id: string) => {
     console.log(`Selected item with id ${id}`);
   };

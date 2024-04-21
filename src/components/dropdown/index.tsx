@@ -6,6 +6,16 @@ import { GoChevronDown } from "react-icons/go";
 import { CgCheck } from "react-icons/cg";
 import "./styles.scss";
 
+/**
+ * @param {string} id - This use to identify the item uniquely.
+ * @param {string} title - Before select an item this use as the name of dropdown eg:"Choose Preferences".
+ * @param {array} items - This is the items you need to show in the dropdown. it should be "DropdownItem".
+ * @param {string} position - The variant of the position (e.g., 'bottom', 'top').
+ * @param {string} backgroundColor - this would be the color of the dropdown default it's used white.
+ * @param {string} width - Dynamic width.
+ * @param {string} selectedId - This used to identify the selected dropdown item.
+ * @param {function} onSelect - This used to select dropdown item.
+ */
 
 type AppDropDownProps = {
   id: string;
@@ -81,7 +91,7 @@ const AppDropDown = (props: AppDropDownProps) => {
         style={{ width, backgroundColor }}
         className="button py-2 px-4 text-zinc-600 outline-none hover:ring hover:outline-blue-500"
       >
-        <span>{selectedItem?.value || title}</span>
+        <span>{selectedItem?.value ?? title}</span>
         <GoChevronDown
           size={20}
           className={classNames("transform duration-500 ease-in-out", {
@@ -92,7 +102,7 @@ const AppDropDown = (props: AppDropDownProps) => {
 
       {/*if Open */}
       {isOpen && (
-        <div className={dropdownClass} style={{backgroundColor}}>
+        <div className={dropdownClass} style={{ backgroundColor }}>
           <ul
             role="menu"
             aria-orientation="vertical"
