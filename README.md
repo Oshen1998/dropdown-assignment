@@ -22,4 +22,4 @@ You will also see any lint errors in the console.
 ![Alt Text](src/assets/ref/responsive_2.png)
 
 ### Dynamic Width
-![Alt Text](src/assets/ref/responsive_2.png)
+![Alt Text](src/assets/ref/dynamic_width.png)
