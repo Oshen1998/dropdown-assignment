@@ -17,3 +17,9 @@ You will also see any lint errors in the console.
 ### Responsive and Fully Reusable Dropdown
 
 ![Alt Text](src/assets/ref/web_1.png)
+![Alt Text](src/assets/ref/web_2.png)
+![Alt Text](src/assets/ref/responsive_1.png)
+![Alt Text](src/assets/ref/responsive_2.png)
+
+### Dynamic Width
+![Alt Text](src/assets/ref/responsive_2.png)
