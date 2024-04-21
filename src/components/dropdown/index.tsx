@@ -16,6 +16,7 @@ import "./styles.scss";
  * @param {string} id - This use to identify the item uniquely.
  * @param {string} title - Before select an item this use as the name of dropdown eg:"Choose Preferences".
  * @param {array} items - This is the items you need to show in the dropdown. it should be "DropdownItem".
+ * @param {boolean} isCustomInputDisabled - enbaled or disabled the custom input values.
  * @param {string} position - The variant of the position (e.g., 'bottom', 'top').
  * @param {string} backgroundColor - this would be the color of the dropdown default it's used white.
  * @param {string} width - Dynamic width.
@@ -26,6 +27,7 @@ import "./styles.scss";
 type AppDropDownProps = {
   id: string;
   title?: string;
+  isCustomInputDisabled: boolean;
   items: DropdownItem[];
   position?: "bottom" | "top";
   backgroundColor?: string;
@@ -40,6 +42,7 @@ const AppDropDown = (props: AppDropDownProps) => {
     id,
     items,
     onSelect,
+    isCustomInputDisabled= false,
     position = "bottom-left",
     selectedId,
     backgroundColor = "white",
@@ -141,7 +144,7 @@ const AppDropDown = (props: AppDropDownProps) => {
       {isOpen && (
         <div className={dropdownClass} style={{ backgroundColor }}>
           <ul role="menu" className="leading-10 w-full px-1">
-            <input
+            {!isCustomInputDisabled && <input
               style={{ width: "100%" }}
               onKeyDown={handleKeyDown}
               autoFocus
@@ -149,7 +152,7 @@ const AppDropDown = (props: AppDropDownProps) => {
               onChange={onChange}
               placeholder="Add Item"
               className="leading-10 w-full px-1"
-            />
+            />}
             {initialItems?.map((item) => (
               <li
                 key={item.id}

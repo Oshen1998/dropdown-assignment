@@ -18,6 +18,7 @@ function App() {
       <div className="m-auto">
       <AppDropDown
         id="person"
+        isCustomInputDisabled={true}
         title="Choose Your Preference"
         position="bottom"
         items={DropDownItems}
