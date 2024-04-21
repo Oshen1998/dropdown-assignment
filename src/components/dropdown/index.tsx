@@ -41,7 +41,7 @@ const AppDropDown = (props: AppDropDownProps) => {
     width = "80vw",
   } = props;
 
-  // open & close dropdown
+  // open & close dropdown states
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // set selected item in the dropdown menu.
@@ -105,7 +105,6 @@ const AppDropDown = (props: AppDropDownProps) => {
         <div className={dropdownClass} style={{ backgroundColor }}>
           <ul
             role="menu"
-            aria-orientation="vertical"
             className="leading-10 w-full px-1"
           >
             {items?.map((item) => (
