@@ -6,7 +6,6 @@ interface OutsideClickProps {
 }
 
 // this hook uses to identify the outside click of component
-
 const useOutsideClick = ({ ref, handler }: OutsideClickProps) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

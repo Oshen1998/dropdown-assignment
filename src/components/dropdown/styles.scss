@@ -1,0 +1,29 @@
+.top {
+  bottom: 100%;
+  left: 0;
+  right: 0;
+}
+
+.bottom {
+  top: 100%;
+  right: 0;
+  left: 0;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  border-radius: 0.5rem;
+  width: 50vw;
+}
+
+.listItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+

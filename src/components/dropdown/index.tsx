@@ -3,16 +3,18 @@ import { DropdownItem } from "./types";
 import useOutsideClick from "../../hooks/outSideClick";
 import classNames from "classnames";
 import { GoChevronDown } from "react-icons/go";
+import { CgCheck } from "react-icons/cg";
+import "./styles.scss";
 
 type AppDropDownProps = {
   id: string;
   title?: string;
   items: DropdownItem[];
-  position?: "bottom-right" | "bottom-left" | "top-right" | "top-left";
-  hasImage?: boolean;
+  position?: "bottom" | "top";
+  hasIcon?: boolean;
   style?: string;
   selectedId?: string;
-  onSelect?: (id: string) => void;
+  onSelect: (id: string) => void;
 };
 
 const AppDropDown = (props: AppDropDownProps) => {
@@ -20,7 +22,7 @@ const AppDropDown = (props: AppDropDownProps) => {
   const {
     id,
     items,
-    hasImage,
+    hasIcon,
     onSelect,
     position = "bottom-left",
     selectedId,
@@ -36,6 +38,7 @@ const AppDropDown = (props: AppDropDownProps) => {
     selectedId ? items?.find((item) => item.id === selectedId) : undefined
   );
 
+  // this hooks use to identify the outside clicks
   useOutsideClick({
     ref: ref,
     handler: () => setIsOpen(false),
@@ -59,12 +62,10 @@ const AppDropDown = (props: AppDropDownProps) => {
   };
 
   const dropdownClass = classNames(
-    "absolute bg-gray-100 w-max max-h-52 overflow-y-auto py-3 rounded shadow-md z-10",
+    "absolute bg-gray-100 w-full max-h-50 overflow-y-auto py-3 rounded-lg shadow-md z-10",
     {
-      "top-full right-0 mt-2": position === "bottom-right",
-      "top-full left-0 mt-2": position === "bottom-left",
-      "bottom-full right-0 mb-2": position === "top-right",
-      "bottom-full left-0 mb-2": position === "top-left",
+      "top mb-2": position === "top",
+      "bottom mt-2": position === "bottom",
     }
   );
 
@@ -72,17 +73,16 @@ const AppDropDown = (props: AppDropDownProps) => {
     <div ref={ref} className="relative">
       <button
         id={id}
-        aria-label="Toggle dropdown"
         aria-haspopup="true"
         aria-expanded={isOpen}
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className={classNames(
-          "flex justify-between items-center gap-5 rounded w-full py-2 px-4 text-black outline-none hover:ring hover:outline-blue-500",
+          "button py-2 px-4 text-zinc-600 outline-none hover:ring hover:outline-blue-500",
           style
         )}
       >
-        <span>{selectedItem?.name || title}</span>
+        <span>{selectedItem?.value || title}</span>
         <GoChevronDown
           size={20}
           className={classNames("transform duration-500 ease-in-out", {
@@ -90,33 +90,50 @@ const AppDropDown = (props: AppDropDownProps) => {
           })}
         />
       </button>
-      {/* Open */}
+
+      {/*if Open */}
       {isOpen && (
-        <div aria-label="Dropdown menu" className={dropdownClass}>
+        <div className={dropdownClass}>
           <ul
             role="menu"
-            aria-labelledby={id}
             aria-orientation="vertical"
-            className="leading-10"
+            className="leading-10 w-full px-1"
           >
             {items?.map((item) => (
               <li
                 key={item.id}
                 onClick={() => handleChange(item)}
                 className={classNames(
-                  "flex items-center cursor-pointer hover:bg-gray-200 px-3",
-                  { "bg-gray-300": selectedItem?.id === item.id }
+                  "listItems rounded hover:bg-gray-200 px-3",
+                  { "bg-blue-200 rounded": selectedItem?.id === item.id }
                 )}
               >
-                {/* {hasImage && (
-                //   <img
-                //     src={item.imageUrl}
-                //     alt="image"
-                //     loading="lazy"
-                //     className="w-8 h-8 rounded-full bg-gray-400 object-cover me-2"
-                //   />
-                )} */}
-                <span>{item.name}</span>
+                <div
+                  className={classNames("text-zinc-600 grid-rows-1 ", {
+                    "text-blue-600 ": selectedItem?.id === item.id,
+                  })}
+                >
+                  {item.name}
+                  {item.imageUrl && (
+                    <span>
+                      <img
+                        src={item.imageUrl}
+                        alt="img"
+                        loading="lazy"
+                        className="w-4 h-4 rounded bg-gray-400 object-cover me-2"
+                      />
+                    </span>
+                  )}
+                </div>
+                {selectedItem?.id === item.id && (
+                  <div
+                    className={classNames({
+                      "text-blue-600 ": selectedItem?.id === item.id,
+                    })}
+                  >
+                    <CgCheck size={30} />
+                  </div>
+                )}
               </li>
             ))}
           </ul>
