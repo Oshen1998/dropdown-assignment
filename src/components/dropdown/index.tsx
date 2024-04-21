@@ -38,7 +38,7 @@ const AppDropDown = (props: AppDropDownProps) => {
     selectedId,
     backgroundColor = "white",
     title = "Select",
-    width = "80vw",
+    width = "100vw",
   } = props;
 
   // open & close dropdown states
@@ -103,10 +103,7 @@ const AppDropDown = (props: AppDropDownProps) => {
       {/*if Open */}
       {isOpen && (
         <div className={dropdownClass} style={{ backgroundColor }}>
-          <ul
-            role="menu"
-            className="leading-10 w-full px-1"
-          >
+          <ul role="menu" className="leading-10 w-full px-1">
             {items?.map((item) => (
               <li
                 key={item.id}
@@ -116,13 +113,15 @@ const AppDropDown = (props: AppDropDownProps) => {
                   { "bg-blue-200 rounded": selectedItem?.id === item.id }
                 )}
               >
-                <div
-                  className={classNames("text-zinc-600", {
-                    "text-blue-600 ": selectedItem?.id === item.id,
-                  })}
-                >
+                <div>
                   <div className="listItems">
-                    <div>{item.name}</div>
+                    <div
+                      className={classNames("text-zinc-600", {
+                        "text-blue-700 ": selectedItem?.id === item.id,
+                      })}
+                    >
+                      {item.name}
+                    </div>
                     <img
                       src={item.imageUrl}
                       alt="img"

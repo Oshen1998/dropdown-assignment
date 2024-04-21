@@ -21,7 +21,7 @@ function App() {
         title="Choose Your Preference"
         position="bottom"
         items={DropDownItems}
-        width="50vw"
+        width="80vw"
         onSelect={handleSelect}
       />
       </div>
