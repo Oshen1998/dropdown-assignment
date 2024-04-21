@@ -6,14 +6,14 @@ export const DropDownItems: DropdownItem[] = [
     name: "Education",
     value: "Education",
     imageUrl:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://cdn1.vectorstock.com/i/1000x1000/83/45/doctorate-hat-with-degree-vector-348345.jpg",
   },
   {
     id: "2",
     name: "Yeah, Science!",
     value: "Science",
     imageUrl:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Science-symbol-2.svg/2048px-Science-symbol-2.svg.png",
   },
   {
     id: "3",

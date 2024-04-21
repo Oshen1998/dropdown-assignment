@@ -109,26 +109,24 @@ const AppDropDown = (props: AppDropDownProps) => {
                 )}
               >
                 <div
-                  className={classNames("text-zinc-600 grid-rows-1 ", {
+                  className={classNames("text-zinc-600", {
                     "text-blue-600 ": selectedItem?.id === item.id,
                   })}
                 >
-                  {item.name}
-                  {item.imageUrl && (
-                    <span>
-                      <img
-                        src={item.imageUrl}
-                        alt="img"
-                        loading="lazy"
-                        className="w-4 h-4 rounded bg-gray-400 object-cover me-2"
-                      />
-                    </span>
-                  )}
+                  <div className="listItems">
+                    <div>{item.name}</div>
+                    <img
+                    src={item.imageUrl}
+                    alt="img"
+                    loading="lazy"
+                    className="w-5 h-5 rounded mx-3"
+                  />
+                  </div>
                 </div>
                 {selectedItem?.id === item.id && (
                   <div
                     className={classNames({
-                      "text-blue-600 ": selectedItem?.id === item.id,
+                      "text-blue-600": selectedItem?.id === item.id,
                     })}
                   >
                     <CgCheck size={30} />
