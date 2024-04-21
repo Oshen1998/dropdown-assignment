@@ -3,7 +3,6 @@
 1. Clone the project on your destination
 2. Run npm i
 
-
 ### `npm run start`
 
 Runs the app in the development mode.\
@@ -16,10 +15,27 @@ You will also see any lint errors in the console.
 
 ### Responsive and Fully Reusable Dropdown
 
-![Alt Text](src/assets/ref/web_1.png)
-![Alt Text](src/assets/ref/web_2.png)
-![Alt Text](src/assets/ref/responsive_1.png)
-![Alt Text](src/assets/ref/responsive_2.png)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markdown Image Example</title>
+</head>
+<body>
+
+# Example Markdown Image with Size
+
+Here's an image with a specified size:
+
+<img src="src/assets/ref/web_1.png" alt="Example Image" width="300" height="200">
+
+</body>
+</html>
+
+<!-- ![Alt Text](src/assets/ref/web_1.png) -->
+<!-- ![Alt Text](src/assets/ref/web_2.png) -->
+<!-- ![Alt Text](src/assets/ref/responsive_1.png) -->
+<!-- ![Alt Text](src/assets/ref/responsive_2.png) -->
 
 ### Dynamic Width
+
 ![Alt Text](src/assets/ref/dynamic_width.png)
