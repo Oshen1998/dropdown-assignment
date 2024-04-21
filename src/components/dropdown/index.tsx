@@ -62,7 +62,7 @@ const AppDropDown = (props: AppDropDownProps) => {
   };
 
   const dropdownClass = classNames(
-    "absolute bg-gray-100 w-full max-h-50 overflow-y-auto py-3 rounded-lg shadow-md z-10",
+    "absolute bg-gray-100 w-full max-h-60 overflow-y-auto py-3 rounded-lg shadow-md z-10",
     {
       "top mb-2": position === "top",
       "bottom mt-2": position === "bottom",

@@ -43,4 +43,25 @@ export const DropDownItems: DropdownItem[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1587677171791-8b93c752999b?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+  {
+    id: "7",
+    name: "Health",
+    value: "Health",
+    imageUrl:
+      "https://images.unsplash.com/photo-1587677171791-8b93c752999b?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: "8",
+    name: "Health",
+    value: "Health",
+    imageUrl:
+      "https://images.unsplash.com/photo-1587677171791-8b93c752999b?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: "9",
+    name: "Health",
+    value: "Health",
+    imageUrl:
+      "https://images.unsplash.com/photo-1587677171791-8b93c752999b?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
 ];

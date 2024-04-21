@@ -19,10 +19,10 @@ function App() {
       <AppDropDown
         id="person"
         title="Choose Your Preference"
-        position="bottom"
+        position="top"
         items={DropDownItems}
         hasIcon
-        style="bg-slate-100"
+        style="bg-slate-100 w-80"
         onSelect={handleSelect}
       />
       </div>
