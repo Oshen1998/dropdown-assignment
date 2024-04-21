@@ -5,7 +5,7 @@
 
 ## Description
 
-I've used React with TypeScript for this project, and I've incorporated both SCSS and Tailwind CSS to make the dropdown menu responsive. It's fully dynamic, and I'm open to any suggestions you might have. Feel free to share your thoughts!
+I've used React with TypeScript for this project, and I've incorporated both SCSS and Tailwind CSS to make the dropdown menu responsive. It's fully dynamic, and I'm open to any suggestions you might have. Feel free to share your thoughts! Thank you
 
 ### `npm run start`
 
