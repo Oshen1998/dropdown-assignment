@@ -26,7 +26,7 @@ You will also see any lint errors in the console.
 
 Here's an image with a specified size:
 
-<img src="src/assets/ref/web_1.png" alt="Example Image" width="300" height="200">
+<img src="src/assets/ref/web_1.png" alt="Example Image" width="100%" height="400">
 
 </body>
 </html>
