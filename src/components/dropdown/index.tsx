@@ -97,6 +97,7 @@ const AppDropDown = (props: AppDropDownProps) => {
   );
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
     setExtraItem(event.target.value);
   };
 
@@ -109,7 +110,7 @@ const AppDropDown = (props: AppDropDownProps) => {
 
   const handleAdd = () => {
     const addItem = {
-      id: new Date().toString(),
+      id: (initialItems.length + 1).toString(),
       name: extraItem,
       value: extraItem,
       imageUrl:
