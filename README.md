@@ -19,6 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 <body>
 
 <img src="src/assets/ref/web_1.png" alt="Example Image" width="100%" height="400">
+<img src="src/assets/ref/web_2.png" alt="Example Image" width="100%" height="400">
+
+### Responsive
+
+<img src="src/assets/ref/responsive_1.png" alt="Example Image" width="100%" height="400">
+<img src="src/assets/ref/responsive_2.png" alt="Example Image" width="100%" height="400">
 
 </body>
 </html>
