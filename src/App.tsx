@@ -1,4 +1,3 @@
-/* eslint-disable react/style-prop-object */
 import React from "react";
 import "./App.css";
 import AppDropDown from "./components/dropdown";
@@ -19,10 +18,9 @@ function App() {
       <AppDropDown
         id="person"
         title="Choose Your Preference"
-        position="top"
+        position="bottom"
         items={DropDownItems}
-        hasIcon
-        style="bg-slate-100 w-80"
+        width="50vw"
         onSelect={handleSelect}
       />
       </div>

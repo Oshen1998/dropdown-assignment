@@ -6,13 +6,14 @@ import { GoChevronDown } from "react-icons/go";
 import { CgCheck } from "react-icons/cg";
 import "./styles.scss";
 
+
 type AppDropDownProps = {
   id: string;
   title?: string;
   items: DropdownItem[];
   position?: "bottom" | "top";
-  hasIcon?: boolean;
-  style?: string;
+  backgroundColor?: string;
+  width?: string;
   selectedId?: string;
   onSelect: (id: string) => void;
 };
@@ -22,12 +23,12 @@ const AppDropDown = (props: AppDropDownProps) => {
   const {
     id,
     items,
-    hasIcon,
     onSelect,
     position = "bottom-left",
     selectedId,
-    style,
+    backgroundColor = "white",
     title = "Select",
+    width = "80vw",
   } = props;
 
   // open & close dropdown
@@ -70,17 +71,15 @@ const AppDropDown = (props: AppDropDownProps) => {
   );
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative w-full">
       <button
         id={id}
         aria-haspopup="true"
         aria-expanded={isOpen}
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={classNames(
-          "button py-2 px-4 text-zinc-600 outline-none hover:ring hover:outline-blue-500",
-          style
-        )}
+        style={{ width, backgroundColor }}
+        className="button py-2 px-4 text-zinc-600 outline-none hover:ring hover:outline-blue-500"
       >
         <span>{selectedItem?.value || title}</span>
         <GoChevronDown
@@ -93,7 +92,7 @@ const AppDropDown = (props: AppDropDownProps) => {
 
       {/*if Open */}
       {isOpen && (
-        <div className={dropdownClass}>
+        <div className={dropdownClass} style={{backgroundColor}}>
           <ul
             role="menu"
             aria-orientation="vertical"
@@ -116,11 +115,11 @@ const AppDropDown = (props: AppDropDownProps) => {
                   <div className="listItems">
                     <div>{item.name}</div>
                     <img
-                    src={item.imageUrl}
-                    alt="img"
-                    loading="lazy"
-                    className="w-5 h-5 rounded mx-3"
-                  />
+                      src={item.imageUrl}
+                      alt="img"
+                      loading="lazy"
+                      className="w-5 h-5 rounded mx-3"
+                    />
                   </div>
                 </div>
                 {selectedItem?.id === item.id && (
