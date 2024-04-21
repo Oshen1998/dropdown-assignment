@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  KeyboardEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { DropdownItem } from "./types";
 import useOutsideClick from "../../hooks/outSideClick";
 import classNames from "classnames";
@@ -44,6 +50,9 @@ const AppDropDown = (props: AppDropDownProps) => {
   // open & close dropdown states
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const [extraItem, setExtraItem] = useState<string>("");
+  const [initialItems, setInitialItems] = useState<DropdownItem[]>(items);
+
   // set selected item in the dropdown menu.
   const [selectedItem, setSelectedItem] = useState<DropdownItem | undefined>(
     selectedId ? items?.find((item) => item.id === selectedId) : undefined
@@ -64,6 +73,10 @@ const AppDropDown = (props: AppDropDownProps) => {
     }
   }, [selectedId, items]);
 
+  useEffect(() => {
+    setInitialItems(items);
+  }, [initialItems, items]);
+
   // onHandle DropDown option
   const handleChange = (item: DropdownItem) => {
     setSelectedItem(item);
@@ -79,6 +92,30 @@ const AppDropDown = (props: AppDropDownProps) => {
       "bottom mt-2": position === "bottom",
     }
   );
+
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setExtraItem(event.target.value);
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleAdd();
+      setIsOpen(false);
+    }
+  };
+
+  const handleAdd = () => {
+    const addItem = {
+      id: new Date().toString(),
+      name: extraItem,
+      value: extraItem,
+      imageUrl:
+        "https://cdn-au.onetrust.com/logos/3dbea99f-abc0-4dbd-bcd7-8f6dfcaea28d/fa31fe00-374f-4fdf-98ff-2a16550795d7/2db09970-a2d9-4d2b-9e0e-5c8a08893ccd/Smartmockups_Logo_Symbol.png",
+    }
+    initialItems.push(addItem);
+    setSelectedItem(addItem);
+    setExtraItem("");
+  };
 
   return (
     <div ref={ref} className="relative w-full">
@@ -104,7 +141,16 @@ const AppDropDown = (props: AppDropDownProps) => {
       {isOpen && (
         <div className={dropdownClass} style={{ backgroundColor }}>
           <ul role="menu" className="leading-10 w-full px-1">
-            {items?.map((item) => (
+            <input
+              style={{ width: "100%" }}
+              onKeyDown={handleKeyDown}
+              autoFocus
+              value={extraItem}
+              onChange={onChange}
+              placeholder="Add Item"
+              className="leading-10 w-full px-1"
+            />
+            {initialItems?.map((item) => (
               <li
                 key={item.id}
                 onClick={() => handleChange(item)}
