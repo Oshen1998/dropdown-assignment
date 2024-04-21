@@ -97,7 +97,6 @@ const AppDropDown = (props: AppDropDownProps) => {
   );
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
     setExtraItem(event.target.value);
   };
 
