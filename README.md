@@ -1,7 +1,11 @@
 # Getting Started with Create React App
 
 1. Clone the project on your destination
-2. Run npm i
+2. Run `npm i`
+
+## Description
+
+I've used React with TypeScript for this project, and I've incorporated both SCSS and Tailwind CSS to make the dropdown menu responsive. It's fully dynamic, and I'm open to any suggestions you might have. Feel free to share your thoughts!
 
 ### `npm run start`
 
