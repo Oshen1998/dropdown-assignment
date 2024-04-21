@@ -37,6 +37,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## You can use this with custom values as well
 
 <img src="src/assets/ref/dynamic_item_add_1.png" alt="Example Image" width="100%" height="400">
+<img src="src/assets/ref/input.png" alt="Example Image" width="100%" height="400">
 <img src="src/assets/ref/dynamic_item_add.png" alt="Example Image" width="80%" height="800">
 
 </body>
